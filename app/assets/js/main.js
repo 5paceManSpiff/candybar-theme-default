@@ -264,3 +264,4 @@ registerCallback('window_title', function (windowTitle) {
 	show(container)
 	container.textContent = windowTitle
 })
+widget_desktops.set_desktop(1);
