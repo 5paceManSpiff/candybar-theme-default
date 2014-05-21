@@ -89,6 +89,11 @@ registerCallback('now_playing_mpris', function (artist, title) {
 	fields.title.textContent = title
 })
 
+function desktops_cb (e) {
+	var num = parseInt(e.target.classList[0].substr(-1))
+	widget_desktops.set_desktop(num);
+}
+
 registerCallback('desktops', function (desktopObj) {
 	var data = JSON.parse(desktopObj)
 	var container = $('#widget_desktops .contents')
@@ -113,6 +118,7 @@ registerCallback('desktops', function (desktopObj) {
 	data.desktops.forEach(function (d, i) {
 		var desktopEl = $('.desktop-' + (i + 1))
 		desktopEl.classList.remove('selected', 'has-windows', 'urgent')
+		desktopEl.onclick = desktops_cb
 		if (d.clients_len > 0) {
 			desktopEl.classList.add('has-windows')
 		}
@@ -264,4 +270,3 @@ registerCallback('window_title', function (windowTitle) {
 	show(container)
 	container.textContent = windowTitle
 })
-widget_desktops.set_desktop(1);
