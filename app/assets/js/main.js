@@ -91,7 +91,7 @@ registerCallback('now_playing_mpris', function (artist, title) {
 
 function desktops_cb (e) {
 	var num = parseInt(e.target.classList[0].substr(-1))
-	widget_desktops.set_desktop(num);
+	widget_desktops.set_desktop(num - 1);
 }
 
 registerCallback('desktops', function (desktopObj) {
