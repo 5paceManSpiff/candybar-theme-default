@@ -284,3 +284,13 @@ registerCallback('window_title', function (windowTitle) {
 	show(container)
 	container.textContent = windowTitle
 })
+
+registerCallback('netctl', function (profile) {
+	var container = $('#widget_netctl .contents')
+	if (!profile || profile == 'none') {
+		hide(container)
+	} else {
+		$('.profile', container).textContent = profile
+		show(container)
+	}
+})

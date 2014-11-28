@@ -263,7 +263,7 @@ html, body
 
 	&#widget_external_ip
 		.icon::before
-			content: '\e80a'
+			content: '\e812'
 		.ip
 			-webkit-user-select: text
 			cursor: auto
@@ -337,6 +337,12 @@ html, body
 				content: '\00b0 F'
 			&.k::after
 				content: 'K'
+
+	&#widget_netctl
+		.icon
+			margin: 0 10px 0 0
+		.icon::before
+			content: '\e80a'
 
 for num in (0..47)
 	.w-icon-{num}
